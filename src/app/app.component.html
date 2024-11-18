@@ -5,11 +5,32 @@
         <span>Courses</span>
       </a>
 
-      <a class="menu-item" mat-button>
+      <!-- tramite routerLink directive dico al router che voglio renderizzare un determinato componente  -->
+      <!-- mando un absolute path (cioè con lo slash, es. /login) e non un relative path (es. login), questo è importante per non avere problemi se ci si trova all'interno di una child route al router e lui renderizza il componente collegato-->
+
+      <!-- <a class="menu-item" mat-button routerLink="/about"> -->
+
+      <!-- posso passare il valore dinamicamente alla direttiva routerLink -->
+      <!-- <a class="menu-item" mat-button [routerLink]="'/about'"> -->
+
+      <!-- con la direttiva routerLinkActive possiamo indicare quale opzione del menù è attiva -->
+      <!-- utilizziamo la classe menu-item-active descritta in app.component.css -->
+      <!-- questa direttiva indica al router che deve applicare una detreminata classe css al tag quando è attivata quella rotta -->
+      <a
+        class="menu-item"
+        mat-button
+        [routerLink]="'/about'"
+        routerLinkActive="menu-item-active"
+      >
         <span>About</span>
       </a>
 
-      <a mat-button class="menu-item">
+      <a
+        mat-button
+        class="menu-item"
+        routerLink="/login"
+        routerLinkActive="menu-item-active"
+      >
         <mat-icon>account_circle</mat-icon>
         <span>Login</span>
       </a>
